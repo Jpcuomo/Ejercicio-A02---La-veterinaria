@@ -57,7 +57,7 @@ namespace ClassLibrary1
             {
                 Console.Write("Ingresar vacuna: ");
                 string vacuna = Console.ReadLine();
-                if(vacuna == "")
+                if(string.IsNullOrWhiteSpace(vacuna))
                 {
                     flag = false;
                 }

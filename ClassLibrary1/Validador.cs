@@ -26,9 +26,8 @@ namespace ClassLibrary1
                 }
                 else
                 {
-                    Console.WriteLine("Opción inválida. Igresá \"s\" o \"n\": ");
+                    Console.WriteLine("Opción inválida. Ingrese \"s\" para sí o \"n\" para no.");
                 }
-
             }
             return flag;
         }
