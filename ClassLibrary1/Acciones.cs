@@ -14,13 +14,13 @@ namespace ClassLibrary1
         // Método llamada en método CrearCliente()
         private static void CargarDatosCliente(out string nombre, out string apellido, out string direccion, out string telefono)
         {
-            Console.Write("Nombre del cliente: ");
+            Console.Write("Nombre: ");
             nombre = Console.ReadLine();
-            Console.Write("Apellido del cliente: ");
+            Console.Write("Apellido: ");
             apellido = Console.ReadLine();
-            Console.Write("Direccion del cliente: ");
+            Console.Write("Domicilio: ");
             direccion = Console.ReadLine();
-            Console.Write("Telefono del cliente: ");
+            Console.Write("Telefono: ");
             telefono = Console.ReadLine();
         }
 
@@ -69,7 +69,7 @@ namespace ClassLibrary1
                 }
                 else
                 {
-                    sb.AppendLine("- Sin vacunas");
+                    sb.AppendLine("- No hay registros");
                 }
                 sb.AppendLine();
             }

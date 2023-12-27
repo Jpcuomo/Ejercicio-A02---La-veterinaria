@@ -55,7 +55,7 @@ namespace ClassLibrary1
             string respuesta;
             while (flag)
             {
-                Console.Write("Ingresar vacuna: ");
+                Console.Write("Registrar vacuna: ");
                 string vacuna = Console.ReadLine();
                 if(string.IsNullOrWhiteSpace(vacuna))
                 {
@@ -64,7 +64,7 @@ namespace ClassLibrary1
                 else
                 {
                     _historialVacunacion.Add(vacuna);
-                    flag = Validador.ContinuarCargaDeDatos("Desea ingresar otra vacuna? (s/n): ", flag);
+                    flag = Validador.ContinuarCargaDeDatos("Desea registrar otra vacuna? (s/n): ", flag);
                 }
             }
         }

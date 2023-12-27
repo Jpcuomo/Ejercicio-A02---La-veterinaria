@@ -57,11 +57,11 @@ namespace ClassLibrary1
         // Método llamado dentro del método CrearObjetoMascota()
         private void IngresarDatosDelAnimal(out string especie, out string nombre, out string fechaNacimiento)
         {
-            Console.Write("Ingresar especie animal: ");
+            Console.Write("Especie animal: ");
             especie = Console.ReadLine();
-            Console.Write("Ingresar nombre del animal: ");
+            Console.Write("Nombre del animal: ");
             nombre = Console.ReadLine();
-            Console.Write("Ingresar fecha de nacimiento del animal (formato dd/MM/yyyy): ");
+            Console.Write("Fecha de nacimiento del animal (formato dd/MM/yyyy): ");
             fechaNacimiento = Console.ReadLine();
         }
 
@@ -82,8 +82,5 @@ namespace ClassLibrary1
         {
             _listaMascotas.Add(mascota);
         }
-
-
-        
     }
 }
