@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public static class Funciones
+    public static class Acciones
     {
         public static List<Cliente> listaClientes = new List<Cliente>();
 
+
+        // Método llamada en método CrearCliente()
         private static void CargarDatosCliente(out string nombre, out string apellido, out string direccion, out string telefono)
         {
             Console.Write("Nombre del cliente: ");
@@ -21,6 +23,7 @@ namespace ClassLibrary1
             Console.Write("Telefono del cliente: ");
             telefono = Console.ReadLine();
         }
+
 
         public static Cliente CrearCliente()
         {
@@ -34,10 +37,12 @@ namespace ClassLibrary1
             return cliente;
         }
 
+
         public static void AgregarClienteALista(Cliente cliente)
         {
             listaClientes.Add(cliente);
         }
+
 
         public static string MostrarInfoDelClienteYMascotas(Cliente cliente)
         {
@@ -59,12 +64,12 @@ namespace ClassLibrary1
                 {
                     foreach(string vacuna in mascota.HistorialVacunacion)
                     {
-                        sb.Append($"   - {vacuna}");
+                        sb.AppendLine($"- {vacuna}");
                     }
                 }
                 else
                 {
-                    sb.AppendLine("   - Sin vacunas");
+                    sb.AppendLine("- Sin vacunas");
                 }
                 sb.AppendLine();
             }

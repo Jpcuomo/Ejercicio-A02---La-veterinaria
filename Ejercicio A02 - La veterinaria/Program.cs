@@ -6,28 +6,34 @@ namespace Ejercicio_A02___La_veterinaria
     {
         static void Main(string[] args)
         {
-            Cliente cliente1 = new Cliente("Juan", "Cuomo", "Madrid 251", "22/10/1985");
-            Cliente cliente2 = new Cliente("Tomas", "Gomez", "España 251", "20/11/1985");
-            //Mascota mascota1 = Cliente.CrearMascota();
+            bool flag = true;
 
-            Mascota mascota1 = cliente1.CrearObjetoMascota();
-            cliente1.AgregarMascotaALista(mascota1);
-            mascota1.AgregarVacunaALista();
-
-
-            foreach (Mascota mascota in cliente1.ListaMascotas)
+            while (flag)
             {
-                Console.WriteLine(mascota.Nombre);
+                Console.WriteLine("Cargar datos del cliente: ");
+                Cliente cliente = Acciones.CrearCliente();
+                Acciones.AgregarClienteALista(cliente);
+                Console.WriteLine();
+
+                Console.WriteLine("Cargar datos de la mascota: ");
+                bool flag2 = true;
+                while (flag2)
+                {
+                    Mascota mascota = cliente.CrearObjetoMascota();
+                    cliente.AgregarMascotaALista(mascota);
+                    mascota.AgregarVacunaALista();
+                    Console.WriteLine();
+
+                    flag2 = Validador.ContinuarCargaDeDatos("Desea cargar otra mascota? (s/n): ", flag2);
+                }
+
+                flag = Validador.ContinuarCargaDeDatos("Desea cargar otro cliente? (s/n): ", flag);
             }
 
-            foreach(string vacuna in mascota1.HistorialVacunacion)
+            Console.Clear();
+            foreach (Cliente cliente in Acciones.listaClientes)
             {
-                Console.WriteLine(vacuna);
-            }
-
-            foreach (Mascota mascota in cliente2.ListaMascotas)
-            {
-                Console.WriteLine(mascota.Nombre);
+                Console.WriteLine(Acciones.MostrarInfoDelClienteYMascotas(cliente));
             }
         }
     }

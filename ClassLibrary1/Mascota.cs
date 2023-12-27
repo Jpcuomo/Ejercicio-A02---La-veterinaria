@@ -57,25 +57,14 @@ namespace ClassLibrary1
             {
                 Console.Write("Ingresar vacuna: ");
                 string vacuna = Console.ReadLine();
-                _historialVacunacion.Add(vacuna);
-                while (true)
+                if(vacuna == "")
                 {
-                    Console.Write("Desea registrar otra vacuna? (s/n): ");
-                    respuesta = Console.ReadLine();
-                    if (respuesta.ToLower() == "n")
-                    {
-                        flag = false;
-                        break;
-                    }
-                    else if(respuesta.ToLower() == "s")
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Opción inválida. Igresá \"s\" o \"n\": ");
-                    }
-
+                    flag = false;
+                }
+                else
+                {
+                    _historialVacunacion.Add(vacuna);
+                    flag = Validador.ContinuarCargaDeDatos("Desea ingresar otra vacuna? (s/n): ", flag);
                 }
             }
         }
